@@ -62,7 +62,7 @@ export default function Header() {
           <button
             type="button"
             onClick={() => setSearchOpen(true)}
-            className="rounded-lg p-2.5 text-brand-700 hover:bg-brand-50 hover:text-accent-600"
+            className="flex h-11 w-11 items-center justify-center rounded-lg text-brand-700 hover:bg-brand-50 hover:text-accent-600"
             aria-label="Rechercher un produit"
           >
             <SearchIcon className="h-5 w-5" />
@@ -70,12 +70,12 @@ export default function Header() {
 
           <Link
             href="/cart"
-            className="relative rounded-lg p-2.5 text-brand-700 hover:bg-brand-50 hover:text-accent-600"
+            className="relative flex h-11 w-11 items-center justify-center rounded-lg text-brand-700 hover:bg-brand-50 hover:text-accent-600"
             aria-label={`Panier${ready && count ? `, ${count} article${count > 1 ? 's' : ''}` : ''}`}
           >
             <CartIcon className="h-5 w-5" />
             {ready && count > 0 && (
-              <span className="absolute -right-0.5 -top-0.5 flex h-5 min-w-5 items-center justify-center rounded-full bg-accent-500 px-1 text-[11px] font-bold text-white">
+              <span className="absolute right-1 top-1 flex h-5 min-w-5 items-center justify-center rounded-full bg-accent-500 px-1 text-[11px] font-bold text-white">
                 {count}
               </span>
             )}
@@ -84,7 +84,7 @@ export default function Header() {
           <button
             type="button"
             onClick={() => setMobileOpen(true)}
-            className="rounded-lg p-2.5 text-brand-700 hover:bg-brand-50 lg:hidden"
+            className="flex h-11 w-11 items-center justify-center rounded-lg text-brand-700 hover:bg-brand-50 lg:hidden"
             aria-label="Ouvrir le menu"
           >
             <MenuIcon className="h-6 w-6" />
@@ -102,7 +102,7 @@ export default function Header() {
               <button
                 type="button"
                 onClick={() => setMobileOpen(false)}
-                className="rounded-lg p-2 text-brand-700 hover:bg-brand-50"
+                className="flex h-11 w-11 items-center justify-center rounded-lg text-brand-700 hover:bg-brand-50"
                 aria-label="Fermer le menu"
               >
                 <CloseIcon className="h-6 w-6" />

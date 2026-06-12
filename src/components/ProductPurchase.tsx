@@ -26,7 +26,7 @@ export default function ProductPurchase({ product }: { product: Product }) {
           <button
             type="button"
             onClick={() => setQty((q) => Math.max(1, q - 1))}
-            className="px-3.5 py-2.5 text-lg font-semibold text-brand-600 hover:text-accent-600"
+            className="flex h-12 w-12 items-center justify-center text-lg font-semibold text-brand-600 hover:text-accent-600"
             aria-label="Diminuer la quantité"
           >
             −
@@ -36,13 +36,13 @@ export default function ProductPurchase({ product }: { product: Product }) {
             min={1}
             value={qty}
             onChange={(e) => setQty(Math.max(1, Number(e.target.value) || 1))}
-            className="w-14 border-x border-brand-200 py-2.5 text-center text-sm font-semibold outline-none"
+            className="h-12 w-14 border-x border-brand-200 text-center text-sm font-semibold outline-none"
             aria-label="Quantité"
           />
           <button
             type="button"
             onClick={() => setQty((q) => q + 1)}
-            className="px-3.5 py-2.5 text-lg font-semibold text-brand-600 hover:text-accent-600"
+            className="flex h-12 w-12 items-center justify-center text-lg font-semibold text-brand-600 hover:text-accent-600"
             aria-label="Augmenter la quantité"
           >
             +

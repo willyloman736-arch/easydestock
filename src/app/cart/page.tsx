@@ -53,27 +53,27 @@ export default function CartPage() {
                       <button
                         type="button"
                         onClick={() => setQuantity(l.id, l.quantity - 1)}
-                        className="px-3 py-1.5 text-brand-600 hover:text-accent-600"
+                        className="flex h-11 w-11 items-center justify-center text-lg text-brand-600 hover:text-accent-600"
                         aria-label="Diminuer"
                       >
                         −
                       </button>
-                      <span className="w-10 text-center text-sm font-semibold">{l.quantity}</span>
+                      <span className="w-8 text-center text-sm font-semibold">{l.quantity}</span>
                       <button
                         type="button"
                         onClick={() => setQuantity(l.id, l.quantity + 1)}
-                        className="px-3 py-1.5 text-brand-600 hover:text-accent-600"
+                        className="flex h-11 w-11 items-center justify-center text-lg text-brand-600 hover:text-accent-600"
                         aria-label="Augmenter"
                       >
                         +
                       </button>
                     </div>
-                    <div className="flex items-center gap-4">
+                    <div className="flex items-center gap-2">
                       <span className="font-bold text-brand-900">{formatPrice(l.price * l.quantity)}</span>
                       <button
                         type="button"
                         onClick={() => removeItem(l.id)}
-                        className="text-brand-400 hover:text-sale"
+                        className="flex h-11 w-11 items-center justify-center rounded-lg text-brand-400 hover:bg-brand-50 hover:text-sale"
                         aria-label={`Retirer ${l.name}`}
                       >
                         <TrashIcon className="h-5 w-5" />

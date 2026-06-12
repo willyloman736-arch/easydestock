@@ -48,7 +48,12 @@ export default function SearchPanel({ onClose }: { onClose: () => void }) {
             className="h-12 flex-1 bg-transparent text-base outline-none placeholder:text-brand-400"
             aria-label="Champ de recherche"
           />
-          <button type="button" onClick={onClose} aria-label="Fermer la recherche" className="text-brand-500 hover:text-accent-600">
+          <button
+            type="button"
+            onClick={onClose}
+            aria-label="Fermer la recherche"
+            className="flex h-11 w-11 shrink-0 items-center justify-center rounded-lg text-brand-500 hover:bg-brand-50 hover:text-accent-600"
+          >
             <CloseIcon className="h-5 w-5" />
           </button>
         </div>

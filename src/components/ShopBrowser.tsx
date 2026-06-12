@@ -51,30 +51,30 @@ export default function ShopBrowser({ products, categories }: Props) {
       {/* Sidebar filters */}
       <aside className="lg:sticky lg:top-28 lg:h-fit">
         <h2 className="mb-3 text-sm font-bold uppercase tracking-wider text-brand-900">Catégories</h2>
-        <ul className="flex flex-wrap gap-2 lg:flex-col lg:gap-1">
+        <ul className="flex flex-col gap-1">
           <li>
             <button
               type="button"
               onClick={() => setActiveCat('all')}
-              className={`flex w-full items-center justify-between rounded-lg px-3 py-2 text-sm transition-colors ${
+              className={`flex w-full min-h-11 items-center justify-between gap-2 rounded-lg px-3 py-2.5 text-sm transition-colors ${
                 activeCat === 'all' ? 'bg-brand-500 font-semibold text-white' : 'text-brand-700 hover:bg-brand-50'
               }`}
             >
-              <span>Toutes les palettes</span>
-              <span className="text-xs opacity-70">{products.length}</span>
+              <span className="truncate">Toutes les palettes</span>
+              <span className="shrink-0 text-xs opacity-70">{products.length}</span>
             </button>
           </li>
           {categories.map((c) => (
-            <li key={c.slug}>
+            <li key={c.slug} className="min-w-0">
               <button
                 type="button"
                 onClick={() => setActiveCat(c.slug)}
-                className={`flex w-full items-center justify-between gap-2 rounded-lg px-3 py-2 text-left text-sm transition-colors ${
+                className={`flex w-full min-h-11 items-center justify-between gap-2 rounded-lg px-3 py-2.5 text-left text-sm transition-colors ${
                   activeCat === c.slug ? 'bg-brand-500 font-semibold text-white' : 'text-brand-700 hover:bg-brand-50'
                 }`}
               >
                 <span className="truncate">{c.name}</span>
-                <span className="text-xs opacity-70">{c.count}</span>
+                <span className="shrink-0 text-xs opacity-70">{c.count}</span>
               </button>
             </li>
           ))}
@@ -93,7 +93,7 @@ export default function ShopBrowser({ products, categories }: Props) {
             <select
               value={sort}
               onChange={(e) => setSort(e.target.value as SortKey)}
-              className="rounded-lg border border-brand-200 bg-white px-3 py-2 text-sm font-medium text-brand-800 outline-none focus:border-accent-400"
+              className="h-11 rounded-lg border border-brand-200 bg-white px-3 text-sm font-medium text-brand-800 outline-none focus:border-accent-400"
             >
               {sortOptions.map((o) => (
                 <option key={o.value} value={o.value}>
